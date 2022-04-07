@@ -1,0 +1,66 @@
+{%extends "base.html"%}
+{%block content%}
+
+<div id = "sign_up" class="container bg-dark bd-highlight rounded my-3 p-4">
+    <h2>¿Vendrás?</h2>
+    <h5 class="text-warning">Responde para confirmar tu asistencia:</h5>
+    <div class="row d-flex">
+        <div class="col-9">
+            <form action="#" method="post">
+                <div class="form-group m-1">
+                    <label for="exampleFormControlTextarea1">Escribe Tu Nombre</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="nm"></textarea>
+                </div>
+                <div class="form-group m-1">
+                    <label for="exampleFormControlSelect1">¿A qué hora llegas?</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="arrival">
+                      <option>19:00</option>
+                      <option>20:00</option>
+                      <option>21:00</option>
+                      <option>22:00</option>
+                      <option>23:00 or later</option>
+                      <option>IDK bro</option>
+                    </select>
+                </div>
+                <div class="form-group m-1">
+                    <label for="exampleFormControlSelect1">¿Traerás algo?</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="bringing">
+                      <option>No</option>
+                      <option>IDK</option>
+                      <option>Cerveza</option>
+                      <option>Chupe</option>
+                      <option>Botana</option>
+                      <option>Comida</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success text-bold my-3 pt-3">Confirmar Asistencia</button>
+            </form>
+        </div>
+    </div>
+    
+</div>
+
+<div id = "guests" class="container bg-dark bd-highlight rounded p-4 my-4">
+    <h2>¡Averígua quién más vendrá!</h2>
+    <h5 class="text-warning">Expected Guests:</h5>
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Arrival Time</th>
+            <th scope="col">Bringing</th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for item in guests %}
+                <tr>
+                    <td>{{item.name}}</td>
+                    <td>{{item.arrival}}</td>
+                    <td>{{item.bringing}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+
+{%endblock%}
