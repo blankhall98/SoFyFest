@@ -1,6 +1,10 @@
 {%extends "base.html"%}
 {%block content%}
 
+{% if message %}
+    <p class="message bg-success rounded w-25 text-center fw-normal">{{message|safe}}</p>
+{%endif%}
+
 <div id = "sign_up" class="container bg-dark bd-highlight rounded my-3 p-4">
     <h2>¿Vendrás?</h2>
     <h5 class="text-warning">Responde para confirmar tu asistencia:</h5>
